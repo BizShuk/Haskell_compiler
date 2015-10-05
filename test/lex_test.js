@@ -4,7 +4,7 @@ var lex = require("../ez_parser.js");
 var chai = require('chai');
 var assert = chai.assert;
 
-describe('Test mocha  ',function() {
+describe('Test mocha',function() {
 
     before(function(done) {
         // Create something before testing
@@ -12,11 +12,7 @@ describe('Test mocha  ',function() {
         done();
     });
 
-    it('should equal test',function() {
-        assert.equal( 'test' , 'test' );
-    });
-
-    it('lex test',function() {
+    it('Haskell Lexical analysis test',function() {
         assert.deepEqual( lex("\\x y") ,
             [
                 {"type":"lambda","token":"\\"},
