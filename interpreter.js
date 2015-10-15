@@ -4,6 +4,10 @@ var interpreter = function (parseTree){
 // app
 // lam
 // var
+
+    var finish_tag = 1;
+    var output = ""
+
     function recur ( json ){
         var op = json[0];
         if ( op == "var") return json;
@@ -11,6 +15,7 @@ var interpreter = function (parseTree){
             v2 = json[2];
         if ( op == "app" ) {
             if ( v1[0] == "lam" ){
+                finish_tag = 1;
                 v1 = apply(v1[2],v1[1],v2);
                 v1 = recur(v1)
                 // v2 applied to v1
@@ -49,7 +54,11 @@ var interpreter = function (parseTree){
         }
 
     }
-    var output = recur(json_tree);
+    output = json_tree;
+    while (finish_tag == 1){
+        finish_tag = 0;
+        output = recur(output);
+    }
     return output;
  }
 
@@ -62,8 +71,6 @@ var interpreter = function (parseTree){
 // console.log(interpreter('["app",["app",["var","x"],["app",["var","x"],["var","y"]]],["var","w"]]'))
 
 console.log(interpreter('["app",["lam","x",["app",["var","x"],["var","z"]]],["var","y"]]'));
-
-
 console.log(interpreter('["app",["app",["lam","Q",["lam","x",["app",["var","Q"],["var","x"]]]],["lam","y",["app",["var","P"],["var","y"]]]],["var","j"]]'))
 
 
