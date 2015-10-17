@@ -1,4 +1,4 @@
-var lex = require('./ez_parser.js');
+var lex = require('./lex.js');
 
 
 var tmp = lex("( \\ x x y) z")

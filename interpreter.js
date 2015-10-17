@@ -63,16 +63,18 @@ var interpreter = function (parseTree){
  }
 
 
-// console.log(interpreter('["lam","x",["var","x"]]'))
-// console.log(interpreter('["lam","x",["app",["var","x"],["var","y"]]]'))
-// console.log(interpreter('["lam","x",["lam","z",["var","y"]]]'))
+console.log(1,interpreter('["lam","x",["var","x"]]'))
+console.log(2,interpreter('["lam","x",["app",["var","x"],["var","y"]]]'))
+console.log(3,interpreter('["lam","x",["lam","z",["var","y"]]]'))
+console.log(4,interpreter('["app",["var","x"],["var","x"]]'))
+console.log(5,interpreter('["app",["app",["var","x"],["app",["var","x"],["var","y"]]],["var","w"]]'))
+console.log(6,interpreter('["app",["lam","x",["app",["var","x"],["var","z"]]],["var","y"]]'));
+console.log(7,interpreter('["app",["app",["lam","Q",["lam","x",["app",["var","Q"],["var","x"]]]],["lam","y",["app",["var","P"],["var","y"]]]],["var","j"]]'))
+console.log(8,interpreter('["app",["lam","true",["app",["lam","false",["app",["lam","and",["app",["app",["var","and"],["var","true"]],["var","true"]]],["lam","a",["lam","b",["app",["app",["var","a"],["var","b"]],["var","false"]]]]]],["lam","a",["lam","b",["var","b"]]]]],["lam","a",["lam","b",["var","a"]]]]'))
+console.log(9,interpreter('["app",["lam","true",["app",["lam","false",["app",["lam","not",["app",["var","not"],["var","true"]]],["lam","p",["lam","a",["lam","b",["app",["app",["var","p"],["var","b"]],["var","a"]]]]]]],["lam","a",["lam","b",["var","b"]]]]],["lam","a",["lam","b",["var","a"]]]]'))
 
-// console.log(interpreter('["app",["var","x"],["var","x"]]'))
-// console.log(interpreter('["app",["app",["var","x"],["app",["var","x"],["var","y"]]],["var","w"]]'))
 
-console.log(interpreter('["app",["lam","x",["app",["var","x"],["var","z"]]],["var","y"]]'));
-console.log(interpreter('["app",["app",["lam","Q",["lam","x",["app",["var","Q"],["var","x"]]]],["lam","y",["app",["var","P"],["var","y"]]]],["var","j"]]'))
-
+//console.log(interpreter('["app",["lam","+1",["app",["lam","0",["app",["lam","1",["app",["lam","2",["app",["lam","3",["app",["lam","4",["app",["lam","5",["app",["lam","6",["app",["lam","7",["app",["lam","8",["app",["lam","9",["app",["lam","-1",["app",["var","-1"],["app",["var","-1"],["app",["var","-1"],["app",["var","+1"],["app",["var","+1"],["app",["var","+1"],["app",["var","-1"],["app",["var","-1"],["app",["var","-1"],["app",["var","-1"],["var","9"]]]]]]]]]]]],["lam","n",["app",["app",["var","n"],["lam","n-",["var","n-"]]],["var","0"]]]]],["app",["var","+1"],["var","8"]]]],["app",["var","+1"],["var","7"]]]],["app",["var","+1"],["var","6"]]]],["app",["var","+1"],["var","5"]]]],["app",["var","+1"],["var","4"]]]],["app",["var","+1"],["var","3"]]]],["app",["var","+1"],["var","2"]]]],["app",["var","+1"],["var","1"]]]],["app",["var","+1"],["var","0"]]]],["lam","s",["lam","z",["var","z"]]]]],["lam","n",["lam","s",["lam","z",["app",["var","s"],["var","n"]]]]]]'))
 
 
 
